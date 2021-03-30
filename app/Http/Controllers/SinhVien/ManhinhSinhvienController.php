@@ -52,6 +52,7 @@ class ManhinhSinhvienController extends Controller
     {
         $title = "Thông báo";
         $user = auth()->user();
+
         $thongBao = DB::table('qlsv_thongbaos')
             ->join('qlsv_thongbaonoinguoinhans', 'qlsv_thongbaos.id', '=', 'qlsv_thongbaonoinguoinhans.id_thongbao')
             ->where('qlsv_thongbaos.deleted_at', '=', '0')
