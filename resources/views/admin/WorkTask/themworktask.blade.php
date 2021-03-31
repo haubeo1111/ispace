@@ -93,12 +93,37 @@
               </table>
             </div>
           </div>
+          <div id="btn1" class=" btn btn-success px-4 float-right ">Thêm Hàng</div>
           <input type="submit" value="+ Lưu" class=" btn btn-success px-4 float-right " />
         </form>
       </div>
     </div>
   </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+  $("#btn1").click(function(){
+var a=$("label:last").text();
+var b=parseInt(a)+1;
+
+    $("#table").append(" <tr width='100%'>"
+                   +" <td><label>"+ b+"</label></td>"
+                    +"<td>"
+
+
+                     +" <input type='text' class='form-control' name='ten[]' value='' placeholder='Enter tên worktaskdetail'>"
+
+                   +"<td>"
+                 +" </tr>");
+  });
+  
+});
+</script>
+
+
+
 <script type="text/javascript">
   $(document).ready(function() {
     $("#monhoc1").change(function(e) {
@@ -119,12 +144,14 @@
         success: function(data) {
 
           alert(data);
-          var thutu = JSON.parse(data);
-          alert(thutu);
+         var thutu= JSON.parse(data);
+         alert(thutu);
           document.getElementById("thutu").value = data.success;
 
         }
       });
+
+
     });
   });
 </script>

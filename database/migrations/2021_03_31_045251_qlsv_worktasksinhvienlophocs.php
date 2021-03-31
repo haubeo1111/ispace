@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQlsvWorktasksinhvienlophocsTable extends Migration
+class QlsvWorktasksinhvienlophocs extends Migration
 {
     /**
      * Run the migrations.
@@ -17,7 +17,7 @@ class CreateQlsvWorktasksinhvienlophocsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('id_sinhvienlophoc');
             $table->bigInteger('id_worktask');
-            $table->date('ngaydanhgia');
+            $table->integer('cautraloi');
             $table->string('ykienkhac');
             $table->string('nguoitao');
             $table->string('nguoisua');
